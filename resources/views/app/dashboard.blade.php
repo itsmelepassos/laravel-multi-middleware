@@ -32,7 +32,7 @@
         @endphp
 
         @if (Auth::guard('app')->check())
-            Guard: App
+            Guard: {{ $userGuard }}
         @endif
     </div>
 

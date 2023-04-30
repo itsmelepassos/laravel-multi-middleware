@@ -46,4 +46,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     *
+     * @return int|string|null
+     * @throws \Illuminate\Contracts\Container\BindingResolutionException
+     * @throws \Psr\Container\NotFoundExceptionInterface
+     * @throws \Psr\Container\ContainerExceptionInterface
+     */
+    protected static function activeGuard()
+    {
+        foreach (array_keys(config('auth.guards')) as $guard) {
+
+            if (auth()->guard($guard)->check()) return $guard;
+        }
+        return null;
+    }
 }
