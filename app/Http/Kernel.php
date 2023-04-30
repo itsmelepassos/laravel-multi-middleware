@@ -65,6 +65,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
         'mdwapp' => \App\Http\Middleware\App\Authenticate::class,
-        'mdwadmin' => \App\Http\Middleware\Admin\Authenticate::class,
+        'mdwadm' => \App\Http\Middleware\Admin\Authenticate::class,
     ];
 }

@@ -37,7 +37,7 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('login', [AuthAdmController::class, 'login'])->name('login');
     Route::post('auth', [AuthAdmController::class, 'auth'])->name('auth');
 
-    Route::group(['middleware' => ['mdwadmin']], function () {
+    Route::group(['middleware' => ['mdwadm']], function () {
         Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     });
     Route::get('logout', [DashboardController::class, 'logout'])->name('logout');
