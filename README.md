@@ -7,6 +7,39 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+## Sobre o Laravel Multi Middleware
+
+Este é um miniprojeto construído utilizando Laravel na versão 10, de forma bem básica, utilizando ao menos dois middlewares, onde um único usuário pode entrar em dois ambientes - um de administrador e outro em uma simulação de uma área que pode ser área de aluno de EAD ou um SaaS - cada um em uma sessão individual. O desenvolvedor é livre para alterar os scripts confirme o nível de complexidade do projeto, como no caso de um nível de acesso para barrar usuários que não devem ter permissão para alterar ou visualizar certas áreas do sistema.
+
+## Instalação
+
+1. Clone o repositório
+
+2. Instale os pacotes via <pre>composer install</pre>
+
+3. Copie o arquivo .env.example para .env, e coloque as informações do banco de dados: 
+    <pre>DB_CONNECTION=mysql
+   DB_HOST=127.0.0.1
+   DB_PORT=3306
+   DB_DATABASE=nome_do_banco
+   DB_USERNAME=root
+   DB_PASSWORD=entre_com_a_senha</pre>
+
+4. Com tudo certo, faça o <pre>php artisan migrate</pre> para criar as tabelas.
+
+5. Crie um usuário. O sistema já vem com um usuário pré configurado na seeder <em>UsersSeeder</em>, bastando digitar no terminal <pre>php artisan db:seed</pre> ou chamar diretamente a seeder via <pre>php artisan db:seed --class=UsersSeeder</pre> após a migrate do banco de dados.
+
+6. Teste o usuário entrando nas tlad e login do app (http://localhost/app/login) e do admin (http://localhost/admin/login)
+
+
+## Suporte
+Em caso de dúvidas ou queira acrescentar algo pra <strong>melhorar</strong> o projeto, deixe um comentário na publicação do Medium [aqui](https://medium.com/@itsmelepassos/laravel-2-middlewares-para-2-ambientes-de-usu%C3%A1rio-7207d139cb56). Toda colaboração será bem-vinda.
+
+## Vida longa e próspera!
+## Créditos do desenvolvedor
+
+- [Leandro Passos](https://github.com/itsmelepassos) (Developer).
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
