@@ -23,8 +23,8 @@ Route::get('/', function () {
 
 /** App Group */
 Route::group(['prefix' => 'app', 'as' => 'app.'], function () {
-    Route::get('login', [AuthAppController::class, 'login'])->name('login');
-    Route::post('auth', [AuthAppController::class, 'auth'])->name('auth');
+
+    Route::match(['get', 'post'], 'login', [AuthAppController::class, 'login'])->name('login');
 
     Route::group(['middleware' => ['mdwapp']], function () {
         Route::get('dashboard', [AppController::class, 'dashboard'])->name('dashboard');
@@ -34,8 +34,7 @@ Route::group(['prefix' => 'app', 'as' => 'app.'], function () {
 
 /** Admin Grouyp */
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::get('login', [AuthAdmController::class, 'login'])->name('login');
-    Route::post('auth', [AuthAdmController::class, 'auth'])->name('auth');
+    Route::match(['get', 'post'], 'login', [AuthAdmController::class, 'login'])->name('login');
 
     Route::group(['middleware' => ['mdwadm']], function () {
         Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');

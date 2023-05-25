@@ -24,7 +24,7 @@
 
     <h1>App Login</h1>
 
-    <form action="{{ route('app.auth') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('app.login') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="group" style="margin: 10px 0;">

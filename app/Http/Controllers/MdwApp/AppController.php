@@ -18,6 +18,10 @@ class AppController extends Controller
      */
     public function dashboard()
     {
+        if (!Auth::guard('app')->check()) {
+            return redirect()->route('app.login');
+        }
+
         $userGuard = User::activeGuard();
 
         return view('app.dashboard', [

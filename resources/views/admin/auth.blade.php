@@ -24,7 +24,7 @@
 
     <h1>Admin Login</h1>
 
-    <form action="{{ route('admin.auth') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('admin.login') }}" method="post" enctype="multipart/form-data">
         @csrf
 
         <div class="group" style="margin: 10px 0;">
